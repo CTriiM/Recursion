@@ -24,8 +24,8 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 void Print(char arr[ROWS][COLS], const int ROWS, const int COLS);
 //----------------------------------------------------------------------
-void Sort(int arr[], const int n);
-void Sort(double arr[], const int n);
+void Sorting(int arr[], const int n);
+void Sorting(double arr[], const int n);
 //----------------------------------------------------------------------
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
@@ -46,6 +46,7 @@ double Avg(char arr[ROWS][COLS], const int ROWS, const int COLS);
 int minValueIn(int arr[], const int n);
 double minValueIn(double arr[], const int n);
 char minValueIn(char arr[], const int n);
+//двумерные
 int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double minValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 char minValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -53,6 +54,7 @@ char minValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS);
 int maxValueIn(int arr[], const int n);
 double maxValueIn(double arr[], const int n);
 char maxValueIn(char arr[], const int n);
+//двумерные
 int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 char maxValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -64,6 +66,7 @@ void shiftRight(int arr[], const int n, int number_of_shifts = 0);
 //----------------------------------------------------------------------
 void shiftLeft(double arr[], const int n, int number_of_shifts = 0);
 void shiftRight(double arr[], const int n, int number_of_shifts = 0);
+//двумерные
 //void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts = 0);
 //void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts = 0);
 //----------------------------------------------------------------------
@@ -82,7 +85,7 @@ void main()
 	int number_of_shifts = 0;
 	FillRand(arr, n);
 	Print(arr, n);
-	Sort(arr, n);
+	Sorting(arr, n);
 	Print(arr, n);
 	cout << "Сумма всех элементов массива: " << Sum(arr, n) << endl;
 	cout << "Среднее арифметическое элементов массива: " << Avg(arr, n) << endl;
@@ -102,7 +105,7 @@ void main()
 	double brr[SIZE];
 	FillRand(brr, SIZE);
 	Print(brr, SIZE);
-	Sort(brr, SIZE);
+	Sorting(brr, SIZE);
 	Print(brr, SIZE);
 	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
 	cout << "Среднее арифметическое элементов массива: " << Avg(brr, SIZE) << endl;
@@ -116,20 +119,20 @@ void main()
 	Print(brr, SIZE);
 
 
-	const int INDEX = 15;
-	char mas[INDEX];
-	FillRand(mas, INDEX);
-	Print(mas, INDEX);
-	cout << "Сумма всех элементов массива: " << Sum(mas, INDEX) << endl;
-	cout << "Среднее арифметическое элементов массива: " << Avg(mas, INDEX) << endl;
-	cout << "Минимальное значение: " << minValueIn(mas, INDEX) << endl;
-	cout << "Максимальное значение: " << maxValueIn(mas, INDEX) << endl;
+	const int IDX = 15;
+	char massiv[IDX];
+	FillRand(massiv, IDX);
+	Print(massiv, IDX);
+	cout << "Сумма всех элементов массива: " << Sum(massiv, IDX) << endl;
+	cout << "Среднее арифметическое элементов массива: " << Avg(massiv, IDX) << endl;
+	cout << "Минимальное значение: " << minValueIn(massiv, IDX) << endl;
+	cout << "Максимальное значение: " << maxValueIn(massiv, IDX) << endl;
 	cout << "Введите количество сдвигов влево: "; cin >> number_of_shifts;
-	shiftLeft(mas, INDEX, number_of_shifts);
-	Print(mas, INDEX);
+	shiftLeft(massiv, IDX, number_of_shifts);
+	Print(massiv, IDX);
 	cout << "Введите количество сдвигов вправо: "; cin >> number_of_shifts;
-	shiftRight(mas, INDEX, number_of_shifts);
-	Print(mas, INDEX);
+	shiftRight(massiv, IDX, number_of_shifts);
+	Print(massiv, IDX);
 
 	//Для двумерных
 	int i_arr_2[ROWS][COLS];
@@ -295,7 +298,7 @@ void Print(char arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 }
 
-void Sort(int arr[], const int n)
+void Sorting(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -311,7 +314,7 @@ void Sort(int arr[], const int n)
 	}
 }
 
-void Sort(double arr[], const int n)
+void Sorting(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
