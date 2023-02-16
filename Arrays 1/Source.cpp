@@ -608,5 +608,3 @@ void shiftRight(char arr[], const int n, int number_of_shifts)
 		arr[0] = buffer;
 	}
 }
-
-
