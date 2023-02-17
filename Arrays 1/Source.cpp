@@ -421,12 +421,12 @@ double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
 
 double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	return Sum(arr, ROWS, COLS) / (ROWS * COLS);
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
 double Avg(char arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	return Sum(arr, ROWS, COLS) / (ROWS * COLS);
+	return (double) Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
 int minValueIn(int arr[], const int n)
