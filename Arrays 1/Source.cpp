@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
 #define  tab "\t"
 
@@ -26,7 +29,8 @@ void Print(char arr[ROWS][COLS], const int ROWS, const int COLS);
 //----------------------------------------------------------------------
 void Sorting(int arr[], const int n);
 void Sorting(double arr[], const int n);
-//двумерные пока непонимаю как сделать
+void Sorting(int arr[ROWS][COLS], const int ROWS, const int COLS);
+//двумерные пока не понимаю как сделать
 //----------------------------------------------------------------------
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
@@ -76,11 +80,12 @@ void shiftRight(char arr[], const int n, int number_of_shifts = 0);
 //void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts = 0);
 //void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts = 0);
 
-
+//#define ARR_1
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef ARR_1
 	const int n = 5;
 	int arr[n];
 	int number_of_shifts = 0;
@@ -134,16 +139,19 @@ void main()
 	cout << "Введите количество сдвигов вправо: "; cin >> number_of_shifts;
 	shiftRight(massiv, IDX, number_of_shifts);
 	Print(massiv, IDX);
+#endif // ARR_1
+
 
 	//Для двумерных
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-
 	cout << "Сумма всех элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
 	cout << "Среднее арифметическое элементов массива: " << Avg(i_arr_2, ROWS, COLS) << endl;
 	cout << "Минимальное значение: " << minValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
+	Sorting(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
 
 	double doub_brr_2[ROWS][COLS];
 	FillRand(doub_brr_2, ROWS, COLS);
@@ -169,7 +177,7 @@ void FillRand(int arr[], const int n)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % 100;
-	
+
 	}
 }
 
@@ -329,6 +337,36 @@ void Sorting(double arr[], const int n)
 		}
 	}
 }
+
+void Sorting(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					//arr[i][j] - выброанный элемент
+					//arr[k][l] - перебираемый элемент
+					if (arr[k][l] < arr[i][j])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+
+	}
+
+
+}
+
+
+
 
 int Sum(int arr[], const int n)
 {
