@@ -222,8 +222,7 @@ void FillRand(char arr[ROWS][COLS], const int ROWS, const int COLS)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = rand() % 10000;
-			arr[i][j] /= 100;
+			arr[i][j] = rand() % 100;
 		}
 	}
 }
@@ -426,7 +425,7 @@ double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS)
 
 double Avg(char arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	return (double) Sum(arr, ROWS, COLS) / (ROWS * COLS);
+	return Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
 int minValueIn(int arr[], const int n)
