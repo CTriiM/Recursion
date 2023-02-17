@@ -26,6 +26,7 @@ void Print(char arr[ROWS][COLS], const int ROWS, const int COLS);
 //----------------------------------------------------------------------
 void Sorting(int arr[], const int n);
 void Sorting(double arr[], const int n);
+//двумерные пока непонимаю как сделать
 //----------------------------------------------------------------------
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
