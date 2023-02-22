@@ -33,6 +33,7 @@ void Sorting(double arr[], const int n)
 
 void Sorting(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
+#ifdef CLASSIC_SORTING_2D
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -54,6 +55,19 @@ void Sorting(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 
 	}
+#endif // 
 
+	for (int i = 0; i < ROWS * COLS; i++)
+	{
+		for (int j = i + 1; j < ROWS * COLS; j++)
+		{
+			if (arr[0][j] < arr[0][j])
+			{
+				int buffer = arr[0][i];
+				arr[0][i] = arr[0][j];
+				arr[0][j] = buffer;
+			}
+		}
+	}
 
 }
